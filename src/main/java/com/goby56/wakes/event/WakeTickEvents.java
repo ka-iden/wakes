@@ -19,7 +19,6 @@ public class WakeTickEvents implements ClientTickEvents.StartTick, ClientTickEve
             // Dimension change: Minecraft.level is swapped to a new ClientLevel instance
             if (wakeHandler.world != client.level) {
                 WakeHandler.kill();
-                System.out.println("NEW DIMENSION: " + wakeHandler.world);
                 WakeHandler.init(client.level);
             }
         }, () -> WakeHandler.init(client.level));
